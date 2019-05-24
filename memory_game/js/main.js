@@ -2,7 +2,28 @@
 //Declare variables for each card and assign the value of "Queen" to two cards and "King" to the other two cards
 
 
-const cards = ["queen", "queen", "king", "king"];
+const cards = [
+{
+	rank: "queen",
+	suit: "hearts",
+	cardImage: "images/queen-of-hearts.png"
+},
+{
+	rank: "queen",
+	suit: "diamonds",
+	cardImage: "images/queen-of-diamonds.png"
+},
+{
+	rank: "king",
+	suit: "hearts",
+	cardImage: "images/king-of-hearts.png"
+},
+{
+	rank: "king",
+	suit: "diamonds",
+	cardImage: "images/king-of-diamonds.png"
+}
+];
 
 //Array to hold the cards in play
 
@@ -26,11 +47,13 @@ function flipCard(cardID) {
 
 //Log the card that was flipped to the console
 
-console.log("User flipped "+cards[cardID]);
+console.log("User flipped " + cards[cardID].rank);
+console.log("Suit: " + cards[cardID].suit);
+console.log("Image: " + cards[cardID].cardImage)
 
 //Push the card that was flipped into the cardsInPlay array
 
-cardsInPlay.push(cards[cardID]);
+cardsInPlay.push(cards[cardID].rank);
 
 // call the checkformatch function
 
@@ -42,5 +65,6 @@ checkForMatch();
 
 flipCard(0);
 flipCard(2);
+
 
 
