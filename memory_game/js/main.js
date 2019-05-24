@@ -8,22 +8,39 @@ const cards = ["queen", "queen", "king", "king"];
 
 const cardsInPlay = [];
 
-let cardOne = cards[2];
+//function to check the two cards match
 
-cardsInPlay.push(cardOne);
+function checkForMatch () {
+	if(cardsInPlay.length === 2) {
+		if(cardsInPlay[0] === cardsInPlay [1]) {
+	console.log("You found a match!");
+} else {
+	console.log("Sorry, try again.")
+}
+} 
+};
 
-console.log("User flipped " + cardOne);
+//function to log which card is flipped and test for card equality
 
-let cardTwo = cards[3];
+function flipCard(cardID) {
 
-cardsInPlay.push(cardTwo);
+//Log the card that was flipped to the console
 
-console.log("User flipped " + cardTwo);
+console.log("User flipped "+cards[cardID]);
 
-//Check to see that two cards have been flipped
+//Push the card that was flipped into the cardsInPlay array
 
-if(cardsInPlay.length === 2) {
-	if(cardsInPlay[0] === cardsInPlay [1]) {
-	alert("You found a match!");
-} else {alert("Sorry, try again.")
-}};
+cardsInPlay.push(cards[cardID]);
+
+// call the checkformatch function
+
+checkForMatch();
+
+};
+
+// Check function
+
+flipCard(0);
+flipCard(2);
+
+
